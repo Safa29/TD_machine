@@ -5,7 +5,7 @@ Created on Sun Sep 18 10:12:08 2022
 @author: Ahmed
 """
 
-#from IPython.display import display
+from IPython.display import display
 import numpy as np
 from sympy import *
 
@@ -15,10 +15,10 @@ Z1 = r + (I * w * l)
 Z2 = I * w* L
 Z3 = R + 1 / (I * C * w)
 
-Zeq = Z1 + ((Z2 * Z3) / (Z2 + Z3))
+Zeq = Z1 + ((Z2 * Z3) / (Z2 + Z3));
 
-pprint("The equivalent impedance is: " )
-pprint(cancel(Zeq))
+print("The equivalent impedance is: " )
+pprint (cancel(Zeq))
 
 w1=2*pi*50
 
