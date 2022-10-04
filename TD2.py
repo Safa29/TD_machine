@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Sep 18 10:12:08 2022
+Created on Tue Oct 04 10:12:08 2022
 
 @author: Ahmed
 """
 
-# from IPython.display import display
+
 import numpy as np
 from sympy import *
 import math
@@ -14,11 +14,8 @@ Vlmax, van, vbn, vcn, w, t, S, Il,Vll,Vln,R, L,IRL,Z = symbols("Z IRL Vlmax van 
 
 exp2={R:5.11,L: 2.95, w:2*pi*60, Vll: 460}
 
-
-
 Vln=Vll/math.sqrt(3)
 Vlmax=math.sqrt(2)*Vll/math.sqrt(3)
-
 
 van=abs(Vlmax.evalf(subs=(exp2)))*cos(w*t)
 vbn=abs(Vlmax.evalf(subs=(exp2)))*cos(w*t-(2*pi/3))
@@ -40,8 +37,6 @@ Il=conjugate(S)/(3*Vln)
 
 print ('The magnitude of line current is:', abs(Il.evalf(subs=(exp2))), 'A')
 print ('The argument of line current is:', np.rad2deg(float(arg(Il.evalf(subs=(exp2))))), 'deg')
-
-
 
 Z= R+I*w*L
 IRL=Vln/Z
